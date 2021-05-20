@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Transfer Funds</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" href="Media/favicon_package_v0.16/favicon.ico">
+	<link rel="stylesheet" href="/Payment Gateway.css" class="css" />
+	<script>
+		function sendinfo() {
+			var paymentgate = document.getElementById("paymentgate").value
+			var fromacc = document.getElementById("fromacc").value;
+			var tobank = document.getElementById("tobank").value;
+			var ifsc = String(document.getElementById("ifsc").value);
+			var ifscc = ifsc.toUpperCase();
+			var account_number = document.getElementById("account_number").value;
+			var confirm_account_number = document.getElementById("confirm_account_number").value;
+			var account_type = document.getElementById("account_type").value;
+		    var beneficiary_name = String(document.getElementById("beneficiary_name").value);
+			var benename = beneficiary_name.toUpperCase();
+			var amount = document.getElementById("amount").value;
+			var remarks = document.getElementById("remarks").value;
+			var bal101 = 100000;
+			var bal102 = 1000;
+            checkreceiversdetails(tobank, account_number, account_type, benename, paymentgate, fromacc, amount);
+			checksendersdetails(paymentgate, fromacc, amount);
+						
+			
+			
+			function checkreceiversdetails(tobank, account_number, account_type, beneficiary_name){
+			if(tobank=="lotus-bank" && account_number=="20109915911" &&account_number==confirm_account_number && account_type=="saving-account"
+			   && benename=="KASHISH VATSH"){
+				checksendersdetails(paymentgate, fromacc, amount);
+				function checksendersdetails(paymentgate, fromacc, amount){
+				if(paymentgate=="accountno" && fromacc=="20109916101"){
+					if (amount <= bal101){
+						alert("Transferring from Account No. 20109916101");
+						alert("Funds Transfer Successful");
+						bal101 -= amount;
+						return bal101
+					}
+					else {
+						alert("Insufficient Balance");
+						return false
+					}
+				}
+				else if(fromacc=="20109916102") {
+					if (amount <= bal102){
+						alert("Transferring from Account No. 20109916102");
+						alert("Funds Transfer Successful");
+						bal102 -= amount;
+						return bal102
+					}
+					else{
+						alert("Insuffucient Balance");
+						return false
+					}
+				}
+
+			};
+			alert("Account Balance in 20109916101 is : " + bal101 + "\r\n" +"Account Balance in 20109916102 is : " + bal102);
+				
+
+			}
+			else{
+				alert("Funds Transfer Unsuccessful");
+				return false
+			}
+		}
+		
+			
+		}
+		function check(){
+			var account_number = document.getElementById("account_number").value;
+			var confirm_account_number = document.getElementById("confirm_account_number").value;
+
+			if(account_number != confirm_account_number){
+				alert("Account Number Don't Match");
+			}
+		}
+
+		function show(){
+			var tobank = document.getElementById("tobank").value;
+			if(tobank != "lotus-bank"){
+				document.getElementById("ifscode").style.display = "block";
+			}
+			else{
+				document.getElementById("ifscode").style.display = "none";
+			}
+           
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="sendinfo()">
+	<div class="container">
+	<div class="main-content">
+		<h1>Transfer Funds</h1>
+	</div>
+
+   
+	<div class="centre-content ">
+		<h5>Send Money- ONE TIME TRANSFER</h5>
+		
+		
+        <select id="paymentgate" class="pay-now-btn topbt" style="vertical-align:middle" >
+			<option value="accountno"><h3>ACCOUNT NUMBER</h3></option>
+            <option disabled value="upi"><h3>UPI (*in development)</h3></option>
+           
+        </select>
+		
+		</div>
+		<div class="centre-content ">
+		<h5>From Account Number</h5>
+		
+        <select id="fromacc" class="pay-now-btn topbt" style="vertical-align:middle" >
+			<option value="20109916101">20109916101</option>
+            <option value="20109916102">20109916102</option>
+            
+        </select>
+		
+		</div>
+		<div class="centre-content ">
+		<h5>TO Bank</h5>
+			
+			<select id="tobank" class="pay-now-btn topbt" style="vertical-align:middle" onchange="show()">
+				
+				<option value="lotus-bank">LOTUS BANK</option>
+				<option value="kotak-mahindra-bank">KOTAK MAHINDRA BANK</option>
+				<option value="axis-bank">AXIS BANK</option>
+				<option value="icici-bank">ICICI BANK</option>
+				<option value="hdfc-bank">HDFC BANK</option>
+				<option value="sbi-bank">STATE BANK OF INDIA</option>
+			</select>
+			<div id="ifscode" style="display: none;">
+		<h5>Enter IFSC Code</h5>
+		    <input type="text" id="ifsc" class="pay-now-btn topbt" style="vertical-align:middle; text-transform:uppercase;" ></div>
+			</div>
+			
+	<div class="account-details">
+		<h2>Account Details</h2>
+		
+			<table>
+				<tr>
+                    <td>Enter Account Number</td>
+					<td><input type="password" id="account_number" placeholder="12345678901" class="pay-now-btnn" style="vertical-align:middle" required></td>
+                </tr>
+                <tr>
+                    <td>Confirm Account Number</td>
+					<td><input type="number" id="confirm_account_number" placeholder="12345678901" class="pay-now-btnn" style="vertical-align:middle" required onchange="check()"></td>
+                </tr>
+                <tr>
+                    <td>Select Account Type</td>
+					<td>
+                        <select id="account_type" class="pay-now-btnn" style="vertical-align:middle" class="pay-now-btnn" style="vertical-align:middle" >
+                            <option value="saving-account">Savings Account</option>
+                            <option value="current-account">Current Account</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ENTER BENEFICIARY NAME</td>
+					<td><input type="text" style="text-transform: uppercase;" id="beneficiary_name" placeholder="ABHIJEET DASS" class="pay-now-btnn" style="vertical-align:middle" required></td>
+                </tr>
+                <tr>
+                   <td>AMOUNT (INR)</td>
+				   <td><input type="number" id="amount" placeholder="500" class="pay-now-btnn" style="vertical-align:middle" required></td>
+                </tr>
+                <tr>
+                    <td>Remarks</td>
+					<td><textarea id="remarks" placeholder="Remarks" class="pay-now-btnn" style="vertical-align:middle"></textarea></td>
+                </tr>
+			</table>
+	</div>
+    <input type="submit"  class="button" value="Submit &rarr;"><br><br>
+	<div><button class="button" onclick="location.href='/Dashboard.html'">Go To Dashboard &rarr; </button></div>
+	</div>
+</form>
+
+</body>
+</html>

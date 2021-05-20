@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans');
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: #d3d3d3;
+    font-family:  sans-serif;
+    margin: 0;
+    color: Black;
+}
+
+a{
+    text-decoration: none;
+}
+
+p {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  
+}
+
+
+nav{
+  height: 70px;
+  background:black;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .imglogo{
+  vertical-align: middle;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+nav .imglogo > img{
+  height: 50px;
+  width: 50px;
+}
+
+nav .logo{
+  float:left;
+  vertical-align: middle;
+  color: rgb(228,177, 61);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 50px;
+  padding-left: 60px;
+}
+
+nav ul{
+  float: left;
+  list-style: none;
+  position: relative;
+}
+nav ul li{
+  display: inline-block;
+  background:black;
+  margin: 0 1px;
+}
+nav ul li a{
+  color: white;
+  line-height: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color: cyan;
+  border-radius: 5px;
+  box-shadow:  0 0 5px #33ffff,
+               0 0 10px #66ffff;
+}
+nav ul ul li a:hover{
+  box-shadow: none;
+}
+nav ul ul{
+  position: absolute;
+  top: 50px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul li:hover > ul{
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li {
+  position: relative;
+  margin: 0px;
+  width:320px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 270px;
+  width:330px;
+}
+.show,.icon,input{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: auto;
+}
+
+
+nav ul li > img{
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+  border-radius: 10%;
+}
+
+
+#fancy-form{
+ padding-top: 5%;
+ background-size: cover;
+ background-position: center;
+ height: 100vh;
+}
+
+/* container utility */
+#fancy-form .container{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* main div */
+.form-sections{
+  margin-top: 5rem;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Form-left styling */
+.Form-left h1{
+  color: black;
+  padding: 0;
+  margin: 0;
+    text-align: left;
+}
+
+.Form-left h4{
+  padding: 0;
+  margin: 0;
+  color: black;
+        text-align: left;
+}
+
+.Form-left span{
+  color: darkred;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.Form-left hr{
+  width: 25rem;
+  margin-left: 0;
+  border: 1px solid rgb(12, 168, 207);
+}
+
+
+/* Form Right Styling */
+.Form-right h1{
+  color: black;
+  padding: 0;
+  margin: 0;
+    text-align: left;
+    
+}
+
+.Form-right hr{
+  width: 25rem;
+  margin-left: 0;
+  border: 1px solid rgb(12, 168, 207);
+}
+
+form{
+  padding-top: 2rem;
+}
+
+form h5{
+  padding: 0;
+  margin: 0;
+  color: black;
+    text-align: left;
+}
+form input{
+  padding:0.6rem;
+  width: 27rem;
+  border: none;
+  background-color:rgba(136, 133, 133, 0.3);
+  color: rgb(99, 70, 2);
+  border: none;
+  outline:none;
+}
+
+form textarea{
+  padding:0.6rem;
+  width: 27rem;
+  border: none;
+  background-color:rgba(136, 133, 133, 0.3);
+  color:rgb(99, 70, 2);
+  border: none;
+  outline:none;
+ }
+
+ form button{
+    width: 9rem;
+    background: orangered;
+    padding: 5px;
+    outline: none;
+    border-color: transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 0.9rem;
+    border-radius: 50px;
+    cursor: pointer;
+ }
+
+form button:hover{
+     width: 9rem;
+    background: red;
+    padding: 5px;
+    outline: none;
+    border-color: transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 0.9rem;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+
+ /* media queries */
+ @media all and (max-width: 1200px) {
+ 
+  nav ul{
+    margin-top: 0;
+    margin-right: 0px;
+    float: right;
+    width: auto;
+    
+  }
+  nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+ 
+  .show + a, ul{
+    display: none;
+  }
+  nav ul li,nav ul ul li{
+    display: block;
+    width: 100%;
+    height: fit-content;
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+    overflow-wrap:inherit ;
+  }
+  .show:hover{
+    color: cyan;
+  }
+  .icon{
+    padding-right: 25px;
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+    
+  }
+
+  nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    
+  }
+  nav ul ul a{
+    padding-left: 40px;
+  }
+  nav ul ul ul a{
+    padding-left: 80px;
+  }
+  nav ul ul ul li{
+    position: static;
+  }
+  [id^=btn]:checked + ul{
+    display: block;
+  }
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  span.cancel:before{
+    content: '\f00d';
+  }
+}
+
+   @media (max-width: 968px){
+
+     #fancy-form .form-sections{
+       display: block;
+       width: 100%;
+       text-align: left;
+          }
+
+      /* background image  */
+     
+      .form-sections .Form-right{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+         }
+        }

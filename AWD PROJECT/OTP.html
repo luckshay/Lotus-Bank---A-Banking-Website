@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OTP Verification</title>
+	<link rel="stylesheet" type="text/css" href="OTP.css">
+    <script>
+        function clickEvent(first,last){
+			if(first.value.length){
+				document.getElementById(last).focus();
+			}
+		}
+    function cotp(){
+        var ist = document.getElementById("ist").value;
+        var sec = document.getElementById("sec").value;
+        var third = document.getElementById("third").value;
+        var fourth = document.getElementById("fourth").value;
+        var fifth = document.getElementById("fifth").value;
+        
+        if(ist==2 && sec==4 && third==0 && fourth==5 && fifth==2 ){
+            location.href="/Dashboard.html";
+        }
+        else{
+            alert("Wrong OTP")
+            location.href="/Login.html"
+        }
+    }
+    </script>
+</head>
+<body>
+	<div class="container">
+		<h1>ENTER OTP</h1>
+		<div class="userInput">
+			<input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+			<input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+			<input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+			<input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+			<input type="text" id="fifth" maxlength="1">
+		</div>
+		<button onclick="cotp()">CONFIRM</button>
+	</div>
+</body>
+</html>
