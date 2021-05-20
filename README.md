@@ -51,16 +51,18 @@ v.	Login and OTP Module connect to Dashboard Module further connected to Transfe
 
 
 ---------------- CREDENTIALS THAT WERE USED ---------------------
-Log In
-username - luckshay
-password - 2010991610
 
-OTP - 24052
+--Log In --
 
-Account Details for which it will work
+-username - luckshay
+-password - 2010991610
 
-Account Number - 20109915911
-Beneficiary Name - KASHISH VATSH
+-OTP - 24052
 
-for account 20109916101 balance is 100000
-for account 20109916102 balance is 1000
+-Account Details for which it will work
+
+-Account Number - 20109915911
+-Beneficiary Name - KASHISH VATSH
+
+-for account 20109916101 balance is 100000
+-for account 20109916102 balance is 1000
