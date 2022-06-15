@@ -1,6 +1,6 @@
 # Lotus-Bank---A-Banking-Website
 
-This was a project I created in 2nd Semester of B.Tech. for Advanced Web Technology Subject.
+This was a project I created in 2nd Semester of B.E. for Advanced Web Technology Subject.
 
 ------------------HIGHER LEVEL OF APPROACH--------------------
 
