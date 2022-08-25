@@ -1,6 +1,6 @@
 # Lotus-Bank---A-Banking-Website
 
-This was a project I created in 2nd Semester of B.E. for Advanced Web Technology Subject.
+This was a project was created in 2nd Semester of B.E. for Advanced Web Technology Subject by the team of three members i.e. [Luckshay Paul](https://github.com/luckshay), [Abhijeet Dass](https://github.com/Abhijeet-droid-AI) and Kashish Vatsh.
 
 ------------------HIGHER LEVEL OF APPROACH--------------------
 
@@ -54,8 +54,8 @@ v.	Login and OTP Module connect to Dashboard Module further connected to Transfe
 
 --Log In --
 
--username - luckshay
--password - 2010991610
+-username - luckshay/Abhijeet
+-password - 2010991610/2010991223
 
 -OTP - 24052
 
